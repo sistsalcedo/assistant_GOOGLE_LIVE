@@ -4,7 +4,8 @@
 
 - [x] Crear estructura `frontend/` y `backend/` según el plan.
 - [x] Inicializar `.gitignore` adecuado (para `node_modules`, `.venv`, `.env`, etc.).
-- [ ] Inicializar repositorio git (opcional, si no lo has hecho aún).
+- [x] Inicializar repositorio git y rama `main`.
+- [x] Subir el proyecto a GitHub (repo: `sistsalcedo/assistant_GOOGLE_LIVE`).
 
 ---
 
@@ -23,7 +24,7 @@
   - [x] `GEMINI_MODELO` (actualizar al valor sin `models/`)
   - [x] `BACKEND_HOST`, `BACKEND_PORT`, `DB_URL`
   - [x] parámetros del asistente (`ASISTENTE_MAX_TOKENS_RESPUESTA`, `ASISTENTE_TEMPERATURA`, `ASISTENTE_PROMPT_SISTEMA`)
-- [ ] Crear y rellenar `backend/.env` real con tu `GEMINI_API_KEY` y el modelo correcto.
+- [x] Crear y rellenar `backend/.env` real con tu `GEMINI_API_KEY` y el modelo correcto.
 
 ### 2.2 Núcleo de la app
 
@@ -88,6 +89,8 @@
   - [x] `package.json`, `tsconfig.json`, `vite.config.ts`, `tailwind.config.cjs`, `postcss.config.cjs`.
   - [x] `index.html` y `src/main.tsx` con `PaginaAtencion`.
   - [x] `src/estilos.css` con Tailwind importado.
+- [x] Proxy en `vite.config.ts`: reescritura `/api` → backend (`rewrite` para que `POST /api/sesion` llegue como `/sesion`).
+- [x] Script `npm run dev` con `CHOKIDAR_USEPOLLING=1` (evitar error EISDIR en unidades de red/virtuales).
 
 ### 3.2 Servicios y hooks
 
@@ -127,8 +130,18 @@
   - [ ] El botón “Finalizar” envía cierre de sesión al backend (comando WebSocket + limpieza en BD).
   - [ ] El timeout se dispara si no hay actividad.
   - [ ] Las sesiones y turnos se guardan correctamente en `datos_conversaciones.db`.
-- [ ] Ajustar en `.env`:
+  - [ ] Ajustar en `.env`:
   - [ ] `ASISTENTE_MAX_TOKENS_RESPUESTA`.
   - [ ] `ASISTENTE_TEMPERATURA`.
   - [ ] `ASISTENTE_PROMPT_SISTEMA`.
   y observar cambios en el comportamiento del asistente.
+
+---
+
+## 5. Repositorio y documentación
+
+- [x] `.gitignore` (`.env`, `node_modules`, `.venv`, `__pycache__`, etc.).
+- [x] Repositorio Git inicializado; commits con código y documentación.
+- [x] Remoto `origin` apuntando a `https://github.com/sistsalcedo/assistant_GOOGLE_LIVE.git`; push a rama `main`.
+- [x] `README.md` con: requisitos, clonar en otra PC, configuración de `.env`, dependencias, comandos para ejecutar backend y frontend.
+- [x] `agents.md` con guía para agentes de IA (stack, estructura, convenciones en español).
